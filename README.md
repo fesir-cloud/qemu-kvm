@@ -1,9 +1,21 @@
-Pakete für QEMU/KVM-Hardwarevirtuaisierung:
-qemu qemu-kvm qemu-system-x86_64 libvirt libvirt-deamon-system ovmf
+# Pakete für QEMU/KVM-Hardwarevirtuaisierung:
+-----------------------------------------------
+# qemu qemu-system-x86_64 qemu-kvm libvirt libvirt-deamon-system libvirt-clients ovmf virt-manager
+
+
+-----------------------------------------------
 
 
 
 
+
+-----------------------------------------------
+
+
+
+
+
+-----------------------------------------------
 
 Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution - und hat jetzt schon >2 Wochen(enden) viel Spaß bereitet :)
 
@@ -77,7 +89,7 @@ https://queuecumber.gitlab.io/linux-acs-override/
 
 #überprüfen mit:
 
-uname -a
+# uname -a
 
 #dann installiere folgende Pakete:
 
@@ -100,11 +112,9 @@ sudo printf "vfio\nvfio_iommu_type 1\nvfio_pci\nvfio_virqfd">>/etc/modules
 
 #lädt die vfio-module zuerst, bevor der kernel die devices lädt, um sie am libvirt zu übergeben, sbald dieses geladen wird
 
-#wenn "bash: /etc/modules: Keine Berechtigung oder su:legitierungsfehler" dann_>!!!die 4 zeilen per hand in /etc/modules schreiben
+# sudo update-initramfs
 
-sudo update-initramfs
-
-reboot
+# reboot
 
 #überprüfe mit "$lspci -k" ob das richtige kernel-module für die vfio devices geladen wurde (vfio-XXXXX)
 
