@@ -4,9 +4,9 @@
 
 
 -----------------------------------------------
-
-
-
+# virsh list --all
+# qemu-img create -b <path>/<IMG>.qcow2 -f qcow2 -F qcow2 <path>/<NAME>.qcow2
+# virsh define <IMAGE_PATH>/<XML-Datei>.xml
 
 
 -----------------------------------------------
@@ -196,4 +196,4 @@ Anzeige: "Video Spice"
 
  
 
- 
+ https://r.search.yahoo.com/_ylt=AwrIAX.jcbBe.lwA8w5fCwx.;_ylu=X3oDMTByMWk2OWNtBGNvbG8DaXIyBHBvcwMyBHZ0aWQDBHNlYwNzcg--/RV=2/RE=1588650531/RO=10/RU=https%3a%2f%2fwww.ibm.com%2fdeveloperworks%2fcommunity%2fwikis%2fform%2fanonymous%2fapi%2fwiki%2ffad12df3-37d4-420d-83fe-e71b158ef55e%2fpage%2f8846d450-8965-4a11-bd79-cd648ed0ea0a%2fattachment%2f9024a5e2-d339-489d-906e-e534292cee80%2fmedia%2fcreate_kvm_vm_cli.pdf/RK=2/RS=LGuuYKjhpguodSukQhZOGclaOGw-
