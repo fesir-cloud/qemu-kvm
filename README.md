@@ -1,3 +1,10 @@
+Pakete für QEMU/KVM-Hardwarevirtuaisierung:
+qemu qemu-kvm qemu-system-x86_64 libvirt libvirt-deamon-system ovmf
+
+
+
+
+
 Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution - und hat jetzt schon >2 Wochen(enden) viel Spaß bereitet :)
 
 (
@@ -89,7 +96,7 @@ sudo update-grub
 
  
 
-sudo echo vfio\nvfio_iommu_type 1\nvfio_pci\nvfio_virqfd >>/etc/modules
+sudo printf "vfio\nvfio_iommu_type 1\nvfio_pci\nvfio_virqfd">>/etc/modules
 
 #lädt die vfio-module zuerst, bevor der kernel die devices lädt, um sie am libvirt zu übergeben, sbald dieses geladen wird
 
