@@ -4,9 +4,10 @@
 
 
 -----------------------------------------------
+
  virsh list --all
  
- qemu-img create -b <path_to_IMG>.qcow2 -f qcow2 -F qcow2 <path_to_NAME>.qcow2 //
+ qemu-img create -b path_to_NAME.qcow2 -f qcow2 -F qcow2 path_to_NAME.qcow2
 
 
 -----------------------------------------------
