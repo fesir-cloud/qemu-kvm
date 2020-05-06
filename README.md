@@ -6,6 +6,11 @@
 -----------------------------------------------
  virsh list --all
  qemu-img create -b <path_to>/<__IMG>.qcow2 -f qcow2 -F qcow2 <path>/<NAME>.qcow2 //
+
+
+-----------------------------------------------
+
+
  virsh define <IMAGE_PATH>/<XML-Datei>.xml
 
 
@@ -15,7 +20,15 @@
 
 
 
------------------------------------------------
+
+
+
+
+
+
+
+
+
 
 Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution - und hat jetzt schon >2 Wochen(enden) viel Spaß bereitet :)
 
