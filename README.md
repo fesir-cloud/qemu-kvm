@@ -4,7 +4,7 @@
 (ohne KVM)
 (# qemu qemu-system-x86_64)
 
-mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation
+mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder AMD analogon)
 # qemu-kvm libvirt libvirt-deamon-system libvirt-clients 
 
 UEFI
@@ -47,8 +47,35 @@ virt-install --connect=qemu:///system \
 --accelerate \
 --vnc
 
+---------------------------------------------------------------------------
+
+# bridge-utils bridge:
+With bridge-utils
+
+This section describes the management of a network bridge using the legacy brctl tool from the bridge-utils package, which is available in the official repositories. See brctl(8) for full listing of options.
+
+Create a new bridge:
+
+# brctl addbr bridge_name
+
+Add a device to a bridge, for example eth0:
+Note: Adding an interface to a bridge will cause the interface to lose its existing IP address. If you are connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
+
+# brctl addif bridge_name eth0
 
 
+Show current bridges and what interfaces they are connected to:
+
+$ brctl show
+
+Set the bridge device up:
+
+# ip link set dev bridge_name up
+
+Delete a bridge, you need to first set it to down: 
+
+# ip link set dev bridge_name down
+# brctl delbr bridge_name
 
 
 
