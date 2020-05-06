@@ -1,7 +1,18 @@
 # Pakete für QEMU/KVM-Hardwarevirtuaisierung:
 -----------------------------------------------
-# qemu qemu-system-x86_64 qemu-kvm libvirt libvirt-deamon-system libvirt-clients ovmf virt-manager
 
+(ohne KVM)
+(# qemu qemu-system-x86_64)
+
+mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation
+# qemu-kvm libvirt libvirt-deamon-system libvirt-clients 
+
+UEFI
+# ovmf 
+
+für GUI
+# virt-manager
+zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
 -----------------------------------------------
 
