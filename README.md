@@ -7,7 +7,9 @@
 
  virsh list --all
  
- qemu-img create -b path_to_NAME.qcow2 -f qcow2 -F qcow2 path_to_NAME.qcow2
+ kopieren einees bereits erstellten Images:
+ 
+ qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
 
 
 -----------------------------------------------
