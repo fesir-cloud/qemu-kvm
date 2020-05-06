@@ -5,6 +5,7 @@
 
 -----------------------------------------------
  virsh list --all
+ 
  qemu-img create -b <path_to>/<__IMG>.qcow2 -f qcow2 -F qcow2 <path>/<NAME>.qcow2 //
 
 
