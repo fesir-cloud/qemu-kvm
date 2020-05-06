@@ -6,7 +6,7 @@
 -----------------------------------------------
  virsh list --all
  
- qemu-img create -b <path_to>/<__IMG>.qcow2 -f qcow2 -F qcow2 <path>/<NAME>.qcow2 //
+ qemu-img create -b <path_to_IMG>.qcow2 -f qcow2 -F qcow2 <path_to_NAME>.qcow2 //
 
 
 -----------------------------------------------
@@ -16,6 +16,22 @@
 
 
 -----------------------------------------------
+oder parameter per virsh install festlegen
+
+virt-install --connect=qemu:///system \
+--name=**** \
+--ram=2048 \
+--vcpus=2 \
+--arch=x86_64 \
+--os-type=linux \
+--os-variant=rhel6 \
+--hvm \
+--virt-type kvm \
+--cdrom=DVD.iso \
+--disk path=****.qcow2,format=qcow2,bus=virtio \
+--network bridge=br0,model=virtio \
+--accelerate \
+--vnc
 
 
 
@@ -23,12 +39,9 @@
 
 
 
+--------------------------------------------------------------------------
 
-
-
-
-
-
+# MOdule-passthrough per I/O
 
 
 Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution - und hat jetzt schon >2 Wochen(enden) viel Spaß bereitet :)
@@ -50,8 +63,6 @@ https://www.youtube.com/watch?v=HXgQVAl4JB4
 
 
 https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#With_vfio-pci_loaded_as_a_module
-
- 
 
  
 
