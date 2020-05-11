@@ -32,20 +32,20 @@ kopieren eines bereits erstellten Images:
 -----------------------------------------------
 oder parameter per virsh install festlegen:
 
-   virt-install --connect=qemu:///system \
-   --name=namme \
-   --ram=6144 \
-   --vcpus=4 \
---arch=x86_64 \
---os-type=windows \
---os-variant=windows \
---hvm \
---virt-type kvm \
---cdrom=DVD.iso \
---disk path=****.qcow2,format=qcow2,bus=virtio \
---network bridge=vbr0,model=virtio \
---accelerate \
---vnc
+    virt-install --connect=qemu:///system \
+    --name=Windowws-X-y \
+    --ram=6144 \
+    --vcpus=4 \
+    --arch=x86_64 \
+    --os-type=windows \
+    --os-variant=windows \
+    --hvm \
+    --virt-type kvm \
+    --cdrom=DVD.iso \
+    --disk path=****.qcow2,format=qcow2,bus=virtio \
+    --network bridge=vbr0,model=virtio \
+    --accelerate \
+    --vnc
 
 ---------------------------------------------------------------------------
 
