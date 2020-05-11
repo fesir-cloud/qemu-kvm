@@ -18,7 +18,7 @@ zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
  virsh list --all
  
- kopieren einees bereits erstellten Images:
+ kopieren eines bereits erstellten Images:
  
  qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
 
@@ -30,20 +30,20 @@ zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
 
 -----------------------------------------------
-oder parameter per virsh install festlegen
+oder parameter per virsh install festlegen:
 
 virt-install --connect=qemu:///system \
---name=**** \
---ram=2048 \
---vcpus=2 \
+--name=namme \
+--ram=6144 \
+--vcpus=4 \
 --arch=x86_64 \
---os-type=linux \
---os-variant=rhel6 \
+--os-type=windows \
+--os-variant=windows \
 --hvm \
 --virt-type kvm \
 --cdrom=DVD.iso \
 --disk path=****.qcow2,format=qcow2,bus=virtio \
---network bridge=br0,model=virtio \
+--network bridge=vbr0,model=virtio \
 --accelerate \
 --vnc
 
@@ -61,11 +61,11 @@ Ordne Netwerkinterface der Brücke zu, z.B. eth0:
 Note: Adding an interface to a bridge will cause the interface to lose its existing IP address. If you are connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
 # brctl addif bridge_name eth0
 
-ZIealle BRükenund de zugeordneten Interfaces:
+Zeige alle Brüken und de zugeordneten Interfaces:
 # brctl show
 
 
-Setze das Brückendeice auf "up"(online):
+Setze das Brückendevice auf "up"(online):
 # ip link set dev bridge_name up
 
 
@@ -81,10 +81,10 @@ Wenndie Brücke vollständig eingerichtet ist kann ihr eine IP(v4) vergeben werd
 
 --------------------------------------------------------------------------
 
-# MOdule-passthrough per I/O
+# Device-passthrough per I/O-module:
 
 
-Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution - und hat jetzt schon >2 Wochen(enden) viel Spaß bereitet :)
+Folgender Workthrough ist ein Komplement aus diesen 3 Tutorials bezogen auf eine "Debian 9"/"Ubuntu18.04"/"Mint 19.X" analoge Distribution :)
 
 (
 Cli-Workthrough
@@ -158,18 +158,18 @@ https://queuecumber.gitlab.io/linux-acs-override/
 
 #dann installiere folgende Pakete:
 
-sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf
+# sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf
 
 #GRUB-Konfigurationsdatei:
 
-sudo nano /etc/default/grub
+# sudo nano /etc/default/grub
 
 #GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on vfio-pci.ids=8086:9d71,8086:5926 pcie_acs_override=downstream"
-#lspci -nnk
+# lspci -nnk
 
-sudo update-grub
+# sudo update-grub
 
- reboot
+# reboot
 
  
 
@@ -183,11 +183,7 @@ sudo printf "vfio\nvfio_iommu_type 1\nvfio_pci\nvfio_virqfd">>/etc/modules
 
 #überprüfe mit "$lspci -k" ob das richtige kernel-module für die vfio devices geladen wurde (vfio-XXXXX)
 
-#
-
- 
-
-sudo virt-manager
+# sudo virt-manager
 
  
 
@@ -226,9 +222,9 @@ sudo virt-manager
 
  
 
-Firmware: BIOS
+Firmware: UEFI
 
-Chipsatz:i440FX
+Chipsatz: Q35
 
  
 
@@ -242,22 +238,19 @@ Speicherformat: qcow2
 
  
 
-NIC-Modul.....testen:
+NIC-Modul.....testen: Brücke!!! 
 
-Netzerkquelle: eno 1: mactap | Brücke
+Netzerkquelle: z.B. vbr0
 
+Gerätemodell: virtio
 
-Gerätemodell: e1000
-
- 
-
-Anzeige: "Video Spice"
+Anzeige: "Video VNC"
 
  
 
 ----------------------------------------------------------------------------------------------------------------
 
- 
+ https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/
 
  
 
