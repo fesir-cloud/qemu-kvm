@@ -69,9 +69,9 @@ Setze das Brückendevice auf "up"(online):
 # ip link set dev bridge_name up
 
 
-Um eine Brückez zu löschen muss sie erst "down"(offline) gesetzt werden: 
-# ip link set dev bridge_name down
-# brctl delbr bridge_name
+    Um eine Brückez zu löschen muss sie erst "down"(offline) gesetzt werden: 
+    # ip link set dev bridge_name down
+    # brctl delbr bridge_name
 
 
 Wenndie Brücke vollständig eingerichtet ist kann ihr eine IP(v4) vergeben werden:
