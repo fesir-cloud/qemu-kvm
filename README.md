@@ -16,26 +16,26 @@ zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
 -----------------------------------------------
 
- virsh list --all
+# virsh list --all
  
- kopieren eines bereits erstellten Images:
+kopieren eines bereits erstellten Images:
  
- qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
+# qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
 
 
 -----------------------------------------------
 
 
- virsh define <IMAGE_PATH>/<XML-Datei>.xml
+# virsh define <IMAGE_PATH>/<XML-Datei>.xml
 
 
 -----------------------------------------------
 oder parameter per virsh install festlegen:
 
-virt-install --connect=qemu:///system \
---name=namme \
---ram=6144 \
---vcpus=4 \
+   virt-install --connect=qemu:///system \
+   --name=namme \
+   --ram=6144 \
+   --vcpus=4 \
 --arch=x86_64 \
 --os-type=windows \
 --os-variant=windows \
