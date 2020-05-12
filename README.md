@@ -14,6 +14,13 @@ für GUI
 # virt-manager
 zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
+Nach der Installation:
+# systemctl start libvirtd
+
+# systemctl enable libvirtd
+
+
+
 -----------------------------------------------
 
 # virsh list --all
