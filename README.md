@@ -7,6 +7,11 @@
 mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder AMD analogon)
 # qemu-kvm libvirt-bin libvirt-deamon-system libvirt-clients 
 
+(libvirt oder libvirt-bin ist das Paket welches libvirt(einen im Kernel verwaltet
+# qemu-utils
+(für image verwaltung und ...)
+
+
 UEFI
 # ovmf 
 
@@ -22,6 +27,12 @@ Nach der Installation:
 
 
 -----------------------------------------------
+
+für qemu-img muss qemu-utils mitinstalliert werden
+
+Ein Disk-Image erstellen:
+# qemu-img create -f qcow2 /var/lib/libvirt/images/Arzt1-VM.qcow2 60G
+
 
 # virsh list --all
  
