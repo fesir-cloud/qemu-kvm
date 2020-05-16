@@ -5,7 +5,7 @@
 (# qemu qemu-system-x86_64)
 
 mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder AMD analogon)
-# qemu-kvm libvirt libvirt-deamon-system libvirt-clients 
+# qemu-kvm libvirt-bin libvirt-deamon-system libvirt-clients 
 
 UEFI
 # ovmf 
