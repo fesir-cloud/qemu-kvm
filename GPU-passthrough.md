@@ -16,6 +16,8 @@ Um die Grafikleistung zu optimierenkönnen mehrer Methoden gewählt werden:
 
 
 ----------------------------------------------------------------------------------------------
+https://wiki.gentoo.org/wiki/QEMU/Options#Graphics_card
+
 https://wiki.archlinux.org/index.php/QEMU/Guest_graphics_acceleration
 
 https://wiki.debianforum.de/QEMU/KVM_mit_dedizierter_Grafikkarte
@@ -23,3 +25,5 @@ https://wiki.debianforum.de/QEMU/KVM_mit_dedizierter_Grafikkarte
 https://bbs.archlinux.org/viewtopic.php?id=162768&p=1
 
 https://looking-glass.hostfission.com/
+
+
