@@ -3,7 +3,7 @@
 1.  Schreibe folgende Eigenschaften in die Registry-Datenbank:
 (https://www.askvg.com/collection-of-registry-tweaks-for-windows-7/)
 
-    Windows Registry Editor Version 5.00
+        Windows Registry Editor Version 5.00
 
     [HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To]
     @="{C2FBB630-2971-11D1-A18C-00C04FD75D13}"
