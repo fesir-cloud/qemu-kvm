@@ -73,21 +73,16 @@
 Power-Shell:
 
     
-    Alle Installieretn Packages anzeigen
-    get-AppxPackage| Select Name, PackageFullName
+        Alle Installieretn Packages anzeigen
+        get-AppxPackage| Select Name, PackageFullName
     
-    Mit folgendem Power-SHell Befehelf findet man z.B. die PackageFullName von Edge
-    get-AppxPackage| Select Name, PackageFullName|select-string "edge"
+        Mit folgendem Power-SHell Befehelf findet man z.B. die PackageFullName von Edge
+        get-AppxPackage| Select Name, PackageFullName|select-string "edge"
     
-    Entfernen:
-    
-    Get-AppxPackage <PackageFullName> | Remove-AppxPackage
-    
-    bzw.
-    
-    get-AppxPackage|select-string Weather|remove-appxpackage
- 
- 
+        Entfernen:
+        Get-AppxPackage <PackageFullName> | Remove-AppxPackage
+        bzw.
+        get-AppxPackage|select-string Weather|remove-appxpackage
  
  
  
