@@ -69,11 +69,12 @@
  
  
 8. Vorinstallierten Müll entfernen:
+
 Power-Shell:
+
     
     Alle Installieretn Packages anzeigen
     get-AppxPackage| Select Name, PackageFullName
-    
     
     Mit folgendem Power-SHell Befehelf findet man z.B. die PackageFullName von Edge
     get-AppxPackage| Select Name, PackageFullName|select-string "edge"
@@ -82,7 +83,7 @@ Power-Shell:
     
     Get-AppxPackage <PackageFullName> | Remove-AppxPackage
     
-       bzw.
+    bzw.
     
     get-AppxPackage|select-string Weather|remove-appxpackage
  
