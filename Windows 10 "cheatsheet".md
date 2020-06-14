@@ -1,7 +1,8 @@
 # Win10 kleinkriegen
 
-#   1.  Schreibe folgende Eigenschaften in die Registry-Datenbank:
-#   (https://www.askvg.com/collection-of-registry-tweaks-for-windows-7/)  
+1.  Schreibe folgende Eigenschaften in die Registry-Datenbank:
+(https://www.askvg.com/collection-of-registry-tweaks-for-windows-7/)  
+    
     Windows Registry Editor Version 5.00
 
     [HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To]
@@ -32,7 +33,7 @@
     
     
     [HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU]
-    "NoAutoUpdatedword"="1" 
+    "NoAutoUpdated"=dword:00000001
     
 2.  sysdm.cpl  >>  Erweitert   >>   Leistung  >>  Einstellungen  -> (x) Für optimale Leistung anpassen
 
@@ -60,13 +61,14 @@
     Windows Defender Service
     Windows Error Reporting Service
     Windows Search
-#
 
-#   7. Autostart aufräumen 
+
+7. Autostart aufräumen 
     regedit  >>  Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
     regedit  >>  Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
  
-#   8. Vorinstallierten Müll entfernen:
+ 
+8. Vorinstallierten Müll entfernen:
     Power-Shell:
     
     Alle Installieretn Packages anyeigen
@@ -79,6 +81,11 @@
     Get-AppxPackage PackageFullName | Remove-AppxPackage
        bzw.
     get-AppxPackage|select-string Weather|remove-appxpackage
+ 
+ 
+ 
+ 
+ 
  
  
  # Nützliche shellcommandos:
