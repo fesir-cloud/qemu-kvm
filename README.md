@@ -25,6 +25,11 @@ Nach der Installation:
 # systemctl enable libvirtd
 
 
+# SPICE:
+
+gir1.2-spiceclientgtk-3.0
+
+
 
 -----------------------------------------------
 
