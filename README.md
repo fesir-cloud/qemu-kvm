@@ -104,6 +104,54 @@ Wenndie Brücke vollständig eingerichtet ist kann ihr eine IP(v4) vergeben werd
 
 --------------------------------------------------------------------------
 
+# IOMMU-Passthrough
+
+0. setzten der VT-x und VT-d parameter im BIOS
+
+1. In /etc/default/grub folgendes in 
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+   "intel_iommu=on" 
+   hinzufügen und grub updaten ("$update-grub")
+   (Wenn ein UEFI-Boot benutzt wird muss statdessen /etc/kernel/cmdline verändert werden)
+   
+2. In /etc/modules folgendes 
+    vfio
+    vfio_iommu_type1
+    vfio_pci
+    vfio_virqfd
+   hinzufügen und initramfs updaten ("$update-initramfs -u -k all")
+3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Device-passthrough per I/O-module:
 
 
