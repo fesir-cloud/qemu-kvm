@@ -36,7 +36,7 @@ gir1.2-spiceclientgtk-3.0
 für qemu-img muss qemu-utils mitinstalliert werden
 
 Ein Disk-Image erstellen:
-# qemu-img create -f qcow2 /var/lib/libvirt/images/Arzt1-VM.qcow2 60G
+# qemu-img create -f qcow2 /var/lib/libvirt/images/Disc1-VM.qcow2 60G
 
 
 # virsh list --all
@@ -77,14 +77,14 @@ Mit bridge-utils
 
 This section describes the management of a network bridge using the legacy brctl tool from the bridge-utils package, which is available in the official repositories. See brctl(8) for full listing of options.
 
-ErstellineneueNetwerkbrücke:
+Erstelle eine neue Netwerkbrücke:
 # brctl addbr bridge_name
 
-Ordne Netwerkinterface der Brücke zu, z.B. eth0:
+Ordne Netzwerkinterface der Brücke zu, z.B. eth0:
 Note: Adding an interface to a bridge will cause the interface to lose its existing IP address. If you are connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
 # brctl addif bridge_name eth0
 
-Zeige alle Brüken und de zugeordneten Interfaces:
+Zeige alle Brücken und die zugeordneten Interfaces:
 # brctl show
 
 
@@ -103,6 +103,8 @@ Wenndie Brücke vollständig eingerichtet ist kann ihr eine IP(v4) vergeben werd
 
 
 --------------------------------------------------------------------------
+
+
 
 # IOMMU-Passthrough
 
@@ -131,27 +133,27 @@ hinzufügen und initramfs updaten ("$update-initramfs -u -k all")
 
 
 
+.
 
 
 
 
 
 
+.
 
 
 
 
 
 
+.
 
 
 
 
 
-
-
-
-
+.
 
 
 
@@ -222,8 +224,7 @@ pci-device-checks:
 
  
 
-#auf  zuerst ACS patchen, wirklich nicht so schwer :) -> quecumber
-
+# ACS-Override patchen:(notwendig, wenn PCI-e Device nicht alleinstehend in einer IOMMU-Gruppe ist)
 
 https://queuecumber.gitlab.io/linux-acs-override/
 
