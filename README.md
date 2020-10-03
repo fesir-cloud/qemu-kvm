@@ -4,7 +4,8 @@
 (ohne KVM)
 (# qemu qemu-system-x86_64)
 
-mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder AMD analogon)
+mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder AMD analogon)(Pakete für Mint 19.3)
+(Für Mint 20: https://www.itzgeek.com/post/how-to-install-kvm-on-ubuntu-20-04-linux-mint-20/ ) 
 # qemu-kvm libvirt-bin libvirt-deamon-system libvirt-clients 
 
 (libvirt oder libvirt-bin ist das Paket welches libvirt(einen im Kernel verwaltet
