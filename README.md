@@ -1,3 +1,5 @@
+
+Überprüfen ob Prozessor Die richtigen Flags aktiviert hat:
 cat /proc/cpuinfo|egrep -c '(vmx|svm)' 
 
 
