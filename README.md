@@ -1,3 +1,8 @@
+cat /proc/cpuinfo|egrep -c '(vmx|svm)' 
+
+
+
+
 # Pakete für QEMU/KVM-Hardwarevirtuaisierung:
 -----------------------------------------------
 
