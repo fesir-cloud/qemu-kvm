@@ -17,30 +17,35 @@ mit qemu-KVM-Prozessoremulation und virtio-Hardwareemulation(VT-x und VT-d oder 
 
 
 (Für Mint 20: https://www.itzgeek.com/post/how-to-install-kvm-on-ubuntu-20-04-linux-mint-20/)  
+
     qemu-kvm libvirt-daemon-system libvirt-clients
 
 
 (libvirt oder libvirt-bin ist das Paket welches libvirt(einen im Kernel verwaltet
-# qemu-utils
+
+    qemu-utils
 (für image verwaltung und ...)
 
 
 UEFI
-# ovmf 
+
+    ovmf 
 
 für GUI
-# virt-manager
+
+    virt-manager
 zum Verbinden einmal als root starten und Nutzer der libvirtd Gruppe hnzufügen
 
 Nach der Installation:
-# systemctl start libvirtd
 
-# systemctl enable libvirtd
+    systemctl start libvirtd
+
+    systemctl enable libvirtd
 
 
 # SPICE:
 
-gir1.2-spiceclientgtk-3.0
+    gir1.2-spiceclientgtk-3.0
 
 
 
@@ -49,20 +54,21 @@ gir1.2-spiceclientgtk-3.0
 für qemu-img muss qemu-utils mitinstalliert werden
 
 Ein Disk-Image erstellen:
-# qemu-img create -f qcow2 /var/lib/libvirt/images/Disc1-VM.qcow2 60G
+
+    qemu-img create -f qcow2 /var/lib/libvirt/images/Disc1-VM.qcow2 60G
 
 
-# virsh list --all
+    virsh list --all
  
 kopieren eines bereits erstellten Images:
  
-# qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
+    qemu-img create -b path_to_SOURCE.qcow2 -f qcow2 -F qcow2 path_to_DEST.qcow2
 
 
 -----------------------------------------------
 
 
-# virsh define <IMAGE_PATH>/<XML-Datei>.xml
+    virsh define <IMAGE_PATH>/<XML-Datei>.xml
 
 
 -----------------------------------------------
@@ -91,19 +97,24 @@ Mit bridge-utils
 This section describes the management of a network bridge using the legacy brctl tool from the bridge-utils package, which is available in the official repositories. See brctl(8) for full listing of options.
 
 Erstelle eine neue Netwerkbrücke:
-# brctl addbr bridge_name
+
+    brctl addbr bridge_name
 
 Ordne Netzwerkinterface der Brücke zu, z.B. eth0:
 Note: Adding an interface to a bridge will cause the interface to lose its existing IP address. If you are connected remotely via the interface you intend to add to the bridge, you will lose your connection. This problem can be worked around by scripting the bridge to be created at system startup.
-# brctl addif bridge_name eth0
+
+    brctl addif bridge_name eth0
 
 Zeige alle Brücken und die zugeordneten Interfaces:
-# brctl show
+
+    brctl show
 
 
 Setze das Brückendevice auf "up"(online):
-# ip link set dev bridge_name up
 
+    ip link set dev bridge_name up
+
+.
 
     Um eine Brückez zu löschen muss sie erst "down"(offline) gesetzt werden: 
     # ip link set dev bridge_name down
@@ -111,7 +122,8 @@ Setze das Brückendevice auf "up"(online):
 
 
 Wenndie Brücke vollständig eingerichtet ist kann ihr eine IP(v4) vergeben werden:
-# ip addr add dev bridge_name 192.168.66.66/24
+
+    ip addr add dev bridge_name 192.168.66.66/24
 
 
 
